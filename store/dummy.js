@@ -21,13 +21,11 @@ async function get(table, id) {
 
 const add = async (table, data) => {
   if (!table) return 'Table is not defined'
-  if (!data) return 'Data is not defined'
+  if (Object.keys(data).length === 0) return 'Data is not defined'
   else {
-    if (!data.name) return 'fields are missing'
-    if (!data.userName) return 'fields are missing'
-    if (!data.password) return 'fields are missing'
     if (!db[table]) db[table] = []
     db[table].push(data)
+    console.log(db)
     return 'user created successful'
   }
 }

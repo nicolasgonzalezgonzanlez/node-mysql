@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //router
 app.use('/api/user', user);
-app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 app.listen(config.api.port, () => {
